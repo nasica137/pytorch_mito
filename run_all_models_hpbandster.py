@@ -24,7 +24,7 @@ for encoder_name in encoder_variations:
             json.dump(config, temp_file)
 
         # Execute the Python file with subprocess module
-        subprocess.run(['python', 'hpbandster2.py', '--config', 'temp_config1.json'])
+        subprocess.run(['python', 'hpbandster.py', '--config', 'temp_config1.json'])
         
 
 # After looping through all combinations, you might want to delete the temporary config file
