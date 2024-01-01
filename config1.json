@@ -1,0 +1,38 @@
+{
+  "data_dir": "../mitochondria/data2",
+  "images_dir": "images",
+  "masks_dir": "masks_png",
+  "train_size": 300,
+  "val_size": 100,
+  "test_size": 100,
+  "batch_size": {
+    "train": 4,
+    "val": 4,
+    "test": 2
+  },
+  "num_workers": {
+    "train": 16,
+    "val": 16,
+    "test": 32
+  },
+  "spatial_size": [256, 256],
+  "pos": 10,
+  "neg": 1,
+  "num_samples": 16,
+  "learning_rate": 1e-4,
+  "epochs": 100,
+  "model": {
+    "name": "Unet",
+    "encoder_name": "mobilenet_v2",
+    "encoder_weights": "imagenet",
+    "in_channels": 3,
+    "classes": 1
+  },
+  "loss": {
+    "name": "DiceLoss"
+  },
+  "optimizer": {
+    "name": "Adam"
+  },
+  "output_directory": "{optimizer[name]}/{loss[name]}/{model[name]}_{model[encoder_name]}/{model[name]}_{model[encoder_name]}_{epochs}epochs_bs{batch_size[train]}_lr_{learning_rate}"
+}
